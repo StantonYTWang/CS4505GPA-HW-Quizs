@@ -10,7 +10,8 @@
 const GLfloat tri_v1[3] = {-0.5f, -0.4f, 0.0f};
 const GLfloat tri_v2[3] = { 0.5f, -0.4f, 0.0f};
 const GLfloat tri_v3[3] = { 0.0f,  0.6f, 0.0f};
-
+int dir=0;
+int angle=1;
 GLubyte timer_cnt = 0;
 bool timer_enabled = true;
 unsigned int timer_speed = 16;
@@ -29,16 +30,29 @@ void My_Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glBegin(GL_TRIANGLES);
-	{
-		glColor3ub(timer_cnt, 0, 255 - timer_cnt);
-		glVertex3fv(tri_v1);
-		glColor3ub(255, timer_cnt, 255 - timer_cnt);
-		glVertex3fv(tri_v2);
-		glColor3ub(255 - timer_cnt, 0, timer_cnt);
-		glVertex3fv(tri_v3);
-	}
-	glEnd();
+	glLoadIdentity();
+	glTranslated(0.5,0.0,0.0);
+	glPushMatrix();
+	glColor3f(1.0f,0.0f,0.0f);
+	glScaled(4.0,1.0,1.0);
+	glutSolidSphere(0.1f,100,2);
+
+	glTranslated(-0.1,0.0,0.0);
+	glScaled(0.25,1.0,1.0);
+	glColor3f(0.0f,0.0f,1.0f);
+	glutSolidSphere(0.05f,100,2);
+
+	glRotated(angle,0.0,0.0,-1.0);
+	glTranslated(-0.3,0.0,0.0);
+	glScaled(3.0,1.0,1.0);
+	glColor3f(1.0f,0.0f,0.0f);
+	glutSolidSphere(0.1f,100,2);
+
+	glScaled(0.3333333,1.0,1.0);
+	glTranslated(-0.35,0.0,0.0);
+	glColor3f(0.0f,0.0f,1.0f);
+	glutSolidSphere(0.075f,100,2);
+	glPopMatrix();
 
 	glutSwapBuffers();
 }
@@ -58,6 +72,16 @@ void My_Reshape(int width, int height)
 
 void My_Timer(int val)
 {
+	if(angle==90)
+		dir=1;
+	else if(angle==0)
+		dir=0;
+	else dir=dir;
+	if(dir==0)
+	angle++;
+	else
+		angle--;
+	
 	timer_cnt++;
 	glutPostRedisplay();
 	if(timer_enabled)
