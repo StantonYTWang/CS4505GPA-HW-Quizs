@@ -2,6 +2,7 @@
 #include <freeglut.h>
 #include <cstdio>
 #include <cstdlib>
+#include <texture_loader.h>
 
 #define MENU_TIMER_START 1
 #define MENU_TIMER_STOP 2
@@ -14,6 +15,9 @@ const GLfloat tri_v3[3] = { 0.0f,  0.6f, 0.0f};
 GLubyte timer_cnt = 0;
 bool timer_enabled = true;
 unsigned int timer_speed = 16;
+
+GLuint texture_jpg;
+GLuint texture_png;
 
 // Print OpenGL context related information.
 void dumpInfo(void)
@@ -39,6 +43,21 @@ void My_Display()
 		glVertex3fv(tri_v3);
 	}
 	glEnd();
+
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, texture_png);
+	glBegin(GL_TRIANGLES);
+	{
+		glColor3f(1, 1, 1);
+		glTexCoord2f(0, 0); glVertex2f(-1, -1);
+		glTexCoord2f(1, 0); glVertex2f(-0.5f, -1);
+		glTexCoord2f(1, 1); glVertex2f(-0.5f, -0.5f);
+		glTexCoord2f(1, 1); glVertex2f(-0.5f, -0.5f);
+		glTexCoord2f(0, 1); glVertex2f(-1, -0.5f);
+		glTexCoord2f(0, 0); glVertex2f(-1, -1);
+	}
+	glEnd();
+	glDisable(GL_TEXTURE_2D);
 
 	glutSwapBuffers();
 }
@@ -124,6 +143,37 @@ void My_Menu(int id)
 	}
 }
 
+void initTextures()
+{
+	// load jpg
+	texture_data tdata = load_jpg("nthu.jpg"); // return width * height * 3 uchars
+	if(tdata.data == 0)
+	{
+		// load failed
+		return;
+	}
+	glGenTextures(1, &texture_jpg);
+    glBindTexture(GL_TEXTURE_2D, texture_jpg);
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, tdata.width, tdata.height, 0, GL_RGB, GL_UNSIGNED_BYTE, tdata.data); // Use GL_RGB
+	glGenerateMipmap(GL_TEXTURE_2D);
+	free_texture_data(tdata);
+
+	// load png
+	tdata = load_png("nthu.png"); // return width * height * 4 uchars
+	if(tdata.data == 0)
+	{
+		// load failed
+		return;
+	}
+	glGenTextures(1, &texture_png);
+    glBindTexture(GL_TEXTURE_2D, texture_png);
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, tdata.width, tdata.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, tdata.data); // Use GL_RGBA
+	glGenerateMipmap(GL_TEXTURE_2D);
+	free_texture_data(tdata);
+}
+
 int main(int argc, char *argv[])
 {
 	// Initialize GLUT and GLEW, then create a window.
@@ -142,6 +192,7 @@ int main(int argc, char *argv[])
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
+	initTextures();
 	////////////////////////
 
 	// Create a menu and bind it to mouse right button.

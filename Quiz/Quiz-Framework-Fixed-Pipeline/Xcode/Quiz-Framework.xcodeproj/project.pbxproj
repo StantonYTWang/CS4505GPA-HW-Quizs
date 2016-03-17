@@ -10,17 +10,24 @@
 		4D460B421C963FF200CBEFB2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D460B411C963FF200CBEFB2 /* main.cpp */; };
 		4D460B491C96416900CBEFB2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D460B481C96416900CBEFB2 /* OpenGL.framework */; };
 		4D460B4B1C96417000CBEFB2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D460B4A1C96417000CBEFB2 /* GLUT.framework */; };
+		4DF9C5531C984D92004870E2 /* libtexture_loader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9C5521C984D92004870E2 /* libtexture_loader.a */; };
+		4DF9C5561C984DB3004870E2 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9C5541C984DB3004870E2 /* libjpeg.a */; };
+		4DF9C5571C984DB3004870E2 /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9C5551C984DB3004870E2 /* libpng16.a */; };
+		4DF9C55A1C984DE3004870E2 /* nthu.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DF9C5581C984DE3004870E2 /* nthu.jpg */; };
+		4DF9C55B1C984DE3004870E2 /* nthu.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DF9C5591C984DE3004870E2 /* nthu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4D460B3C1C963FF200CBEFB2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				4DF9C55A1C984DE3004870E2 /* nthu.jpg in CopyFiles */,
+				4DF9C55B1C984DE3004870E2 /* nthu.png in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -29,6 +36,11 @@
 		4D460B411C963FF200CBEFB2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4D460B481C96416900CBEFB2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4D460B4A1C96417000CBEFB2 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		4DF9C5521C984D92004870E2 /* libtexture_loader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtexture_loader.a; path = lib/libtexture_loader.a; sourceTree = "<group>"; };
+		4DF9C5541C984DB3004870E2 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = ../../../../../../../../../usr/local/Cellar/jpeg/8d/lib/libjpeg.a; sourceTree = SDKROOT; };
+		4DF9C5551C984DB3004870E2 /* libpng16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng16.a; path = ../../../../../../../../../usr/local/Cellar/libpng/1.6.21/lib/libpng16.a; sourceTree = SDKROOT; };
+		4DF9C5581C984DE3004870E2 /* nthu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nthu.jpg; path = "Quiz-Framework/nthu.jpg"; sourceTree = "<group>"; };
+		4DF9C5591C984DE3004870E2 /* nthu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nthu.png; path = "Quiz-Framework/nthu.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF9C5561C984DB3004870E2 /* libjpeg.a in Frameworks */,
+				4DF9C5571C984DB3004870E2 /* libpng16.a in Frameworks */,
+				4DF9C5531C984D92004870E2 /* libtexture_loader.a in Frameworks */,
 				4D460B4B1C96417000CBEFB2 /* GLUT.framework in Frameworks */,
 				4D460B491C96416900CBEFB2 /* OpenGL.framework in Frameworks */,
 			);
@@ -47,6 +62,11 @@
 		4D460B351C963FF200CBEFB2 = {
 			isa = PBXGroup;
 			children = (
+				4DF9C5581C984DE3004870E2 /* nthu.jpg */,
+				4DF9C5591C984DE3004870E2 /* nthu.png */,
+				4DF9C5541C984DB3004870E2 /* libjpeg.a */,
+				4DF9C5551C984DB3004870E2 /* libpng16.a */,
+				4DF9C5521C984D92004870E2 /* libtexture_loader.a */,
 				4D460B4A1C96417000CBEFB2 /* GLUT.framework */,
 				4D460B481C96416900CBEFB2 /* OpenGL.framework */,
 				4D460B401C963FF200CBEFB2 /* Quiz-Framework */,
@@ -215,6 +235,12 @@
 		4D460B461C963FF200CBEFB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+					/usr/local/Cellar/jpeg/8d/lib,
+					/usr/local/Cellar/libpng/1.6.21/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -222,6 +248,12 @@
 		4D460B471C963FF200CBEFB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+					/usr/local/Cellar/jpeg/8d/lib,
+					/usr/local/Cellar/libpng/1.6.21/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
