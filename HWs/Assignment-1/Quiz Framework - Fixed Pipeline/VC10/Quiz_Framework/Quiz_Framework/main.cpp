@@ -122,6 +122,66 @@ void My_Display()
 		glutSolidCone(1.0, 2.0, 200, 20);
 	glPopMatrix();
 
+	glPushMatrix();		//left legs
+		glColor3f(1.0, 1.0, 0.0);
+		glTranslatef(0.8, -4.7, 0.0);
+		glTranslatef(-2.0, -0.0, 0.0);
+		glColor3f(1.0, 1.0, 0.0);
+		glutSolidSphere(0.7, 200, 20);
+		glRotated(90, 0.0, 0.0, 1.0);
+		glTranslatef(-2.5, 0.0, 0.0);
+		glColor3f(0.5, 0.5, 0.5);
+		glPushMatrix();
+		glScalef(1.75, 0.75, 1.0);
+		glutSolidCube(2.0);
+		glPopMatrix();
+		glTranslatef(-2.0, 0.0, 0.0);
+		glColor3f(1.0, 1.0, 0.0);
+		glutSolidSphere(0.7, 200, 20);
+		glTranslatef(-1.75, 0.0, 0.0);
+		glColor3f(0.5, 0.5, 0.5);
+		glPushMatrix();
+		glScalef(2.0/1.5, 0.75, 1.0);
+		glutSolidCube(2.0);
+		glPopMatrix();
+		glColor3f(0.0, 1.0, 0.0);
+		glTranslatef(-1.25, 0.0, 0.7);
+		glPushMatrix();
+		glScalef(0.3, 2.0, 1.0);
+		glutSolidCube(1.0);
+		glPopMatrix();
+	glPopMatrix();
+
+	glPushMatrix();		//right legs
+		glColor3f(1.0, 1.0, 0.0);
+		glTranslatef(0.8, -4.7, 0.0);
+		glTranslatef(0.5, -0.0, 0.0);
+		glColor3f(1.0, 1.0, 0.0);
+		glutSolidSphere(0.7, 200, 20);
+		glRotated(90, 0.0, 0.0, 1.0);
+		glTranslatef(-2.5, 0.0, 0.0);
+		glColor3f(0.5, 0.5, 0.5);
+		glPushMatrix();
+		glScalef(1.75, 0.75, 1.0);
+		glutSolidCube(2.0);
+		glPopMatrix();
+		glTranslatef(-2.0, 0.0, 0.0);
+		glColor3f(1.0, 1.0, 0.0);
+		glutSolidSphere(0.7, 200, 20);
+		glTranslatef(-1.75, 0.0, 0.0);
+		glColor3f(0.5, 0.5, 0.5);
+		glPushMatrix();
+		glScalef(2.0/1.5, 0.75, 1.0);
+		glutSolidCube(2.0);
+		glPopMatrix();
+		glColor3f(0.0, 1.0, 0.0);
+		glTranslatef(-1.25, 0.0, 0.7);
+		glPushMatrix();
+		glScalef(0.3, 2.0, 1.0);
+		glutSolidCube(1.0);
+		glPopMatrix();
+	glPopMatrix();
+
 
 	glutSwapBuffers();
 }
