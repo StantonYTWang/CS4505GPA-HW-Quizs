@@ -18,6 +18,9 @@ unsigned int timer_speed = 16;
 
 int view_x, view_y, view_z;
 int press;
+int angle = 0, dir = 1;
+int angle_limbs = 0, dir_limbs = 1;
+int angle_lleg = 0, angle_rleg = 0, dir_lleg = 1, dir_rleg = 1;
 
 GLuint texture_jpg;
 GLuint texture_png;
@@ -50,9 +53,10 @@ void My_Display()
 		glPushMatrix();	//head
 			glColor3f(0.0f, 0.0f, 1.0f);
 			glutSolidSphere(2.0, 200, 20);
+			glRotated(angle, 0.0, 1.0, 0.0);		//rotate head
 			glPushMatrix();
 				glTranslatef(0.7, 0.5, 2.0);	//eyes
-				glColor3f(0.3, 0.5, 0.5);
+				glColor3f(0.5, 0.5, 0.3);
 				glutSolidSphere(0.3, 200, 20);
 				glTranslatef(-1.3, 0.0, 0.0);
 				glutSolidSphere(0.3, 200, 20);
@@ -73,6 +77,7 @@ void My_Display()
 	glPushMatrix();		//left arm
 		glTranslatef(-2.5, 1.3, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_limbs, 0.0, 0.0, -1.0);		//rotate upper arm
 		glutSolidSphere(0.5, 200, 20);
 		glRotated(75, 0.0, 0.0, 1.0);
 		glTranslatef(-2.0, 0.0, 0.0);
@@ -83,6 +88,7 @@ void My_Display()
 		glPopMatrix();
 		glTranslatef(-1.75, 0.0, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_limbs, 0.0, 1.0, 0.0);		//rotate lower arm
 		glutSolidSphere(0.4, 200, 20);
 		glTranslatef(-1.75, 0.0, 0.0);
 		glColor3f(0.5, 0.5, 0.5);
@@ -99,6 +105,7 @@ void My_Display()
 	glPushMatrix();		//right arm
 		glTranslatef(2.5, 1.3, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_limbs, .0, 0.0, 1.0);		//rotate upper arm
 		glutSolidSphere(0.5, 200, 20);
 		glRotated(75, 0.0, 0.0, -1.0);
 		glTranslatef(2.0, 0.0, 0.0);
@@ -109,6 +116,7 @@ void My_Display()
 		glPopMatrix();
 		glTranslatef(1.75, 0.0, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_limbs, 0.0, -1.0, 0.0);		//rotate lower arm
 		glutSolidSphere(0.4, 200, 20);
 		glTranslatef(1.75, 0.0, 0.0);
 		glColor3f(0.5, 0.5, 0.5);
@@ -127,6 +135,7 @@ void My_Display()
 		glTranslatef(0.8, -4.7, 0.0);
 		glTranslatef(-2.0, -0.0, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_lleg, -1.0, 0.0, 0.0);		//rotate upper leg
 		glutSolidSphere(0.7, 200, 20);
 		glRotated(90, 0.0, 0.0, 1.0);
 		glTranslatef(-2.5, 0.0, 0.0);
@@ -137,6 +146,7 @@ void My_Display()
 		glPopMatrix();
 		glTranslatef(-2.0, 0.0, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_lleg, 0.0, -1.0, 0.0);		//rotate lower leg
 		glutSolidSphere(0.7, 200, 20);
 		glTranslatef(-1.75, 0.0, 0.0);
 		glColor3f(0.5, 0.5, 0.5);
@@ -157,6 +167,7 @@ void My_Display()
 		glTranslatef(0.8, -4.7, 0.0);
 		glTranslatef(0.5, -0.0, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_rleg, -1.0, 0.0, 0.0);		//rotate upper leg
 		glutSolidSphere(0.7, 200, 20);
 		glRotated(90, 0.0, 0.0, 1.0);
 		glTranslatef(-2.5, 0.0, 0.0);
@@ -167,6 +178,7 @@ void My_Display()
 		glPopMatrix();
 		glTranslatef(-2.0, 0.0, 0.0);
 		glColor3f(1.0, 1.0, 0.0);
+		glRotated(angle_rleg, 0.0, -1.0, 0.0);		//rotate lower leg
 		glutSolidSphere(0.7, 200, 20);
 		glTranslatef(-1.75, 0.0, 0.0);
 		glColor3f(0.5, 0.5, 0.5);
@@ -213,6 +225,45 @@ void My_Timer(int val)
 		view_x = 0;
 		view_y = 0;
 	}
+
+	//head
+	if(dir == 1) angle+=3;
+	else angle-=3;
+
+	if(angle >= 45) dir = 0;
+	else if(angle <= -45) dir = 1;
+
+	//arm
+	if(dir_limbs == 1) angle_limbs++;
+	else angle_limbs--;
+
+	if(angle_limbs >= 45) dir_limbs = 0;
+	else if(angle_limbs <= 0) dir_limbs = 1;
+
+	//leg
+	if(dir_lleg == 1){
+		if(angle_rleg <= 0)	angle_lleg+=1;
+		else angle_lleg = angle_lleg;
+	}else {
+		if(angle_rleg <= 0)	angle_lleg-=1;
+		else angle_lleg = angle_lleg;
+	}
+
+	if(dir_rleg == 1){
+		if(angle_lleg <= 0)	angle_rleg+=1;
+		else angle_rleg = angle_rleg;
+	}else {
+		if(angle_lleg <= 0)	angle_rleg-=1;
+		else angle_rleg = angle_rleg;
+	}
+
+	if(angle_lleg >= 50)	dir_lleg = 0;
+	else if(angle_lleg <= 0)	dir_lleg = 1;
+
+	
+	if(angle_rleg >= 50)	dir_rleg = 0;
+	else if(angle_rleg <= 0)	dir_rleg = 1;
+
 
 	press = 0;
 
@@ -343,7 +394,7 @@ int main(int argc, char *argv[])
 	
 	// Initialize OpenGL states.
 	////////////////////////
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(0.1f, 0.1f, 0.1f, 0.5f);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
 	//initTextures();
