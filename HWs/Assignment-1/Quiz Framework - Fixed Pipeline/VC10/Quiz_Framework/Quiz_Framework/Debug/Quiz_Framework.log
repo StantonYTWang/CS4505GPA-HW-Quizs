@@ -1,45 +1,12 @@
-﻿Build started 2016/3/18 下午 09:49:16.
+﻿Build started 2016/3/21 下午 03:58:16.
      1>Project "Z:\CS4505GPA-HW-Quizs\HWs\Assignment-1\Quiz Framework - Fixed Pipeline\VC10\Quiz_Framework\Quiz_Framework\Quiz_Framework.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Quiz_Framework.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(44): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(55): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(55): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(55): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(56): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(57): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(57): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(57): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(57): warning C4305: 'initializing' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(93): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(94): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(96): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(100): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(100): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(100): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(113): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(131): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(141): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(159): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(170): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(170): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(189): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(193): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(195): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(202): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(202): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(221): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(225): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>z:\cs4505gpa-hw-quizs\hws\assignment-1\quiz framework - fixed pipeline\vc10\quiz_framework\quiz_framework\main.cpp(227): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+         All outputs are up-to-date.
        Link:
-         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\CS4505GPA-HW-Quizs\HWs\Assignment-1\Quiz Framework - Fixed Pipeline\VC10\Quiz_Framework\Debug\Quiz_Framework.exe" /INCREMENTAL:NO /NOLOGO opengl32.lib freeglut.lib glew32.lib texture_loaderd.lib jpeg.lib libpng16.lib zlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Quiz_Framework.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"Z:\CS4505GPA-HW-Quizs\HWs\Assignment-1\Quiz Framework - Fixed Pipeline\VC10\Quiz_Framework\Debug\Quiz_Framework.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\CS4505GPA-HW-Quizs\HWs\Assignment-1\Quiz Framework - Fixed Pipeline\VC10\Quiz_Framework\Debug\Quiz_Framework.lib" /MACHINE:X86 Debug\main.obj
-     1>main.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+         All outputs are up-to-date.
          Quiz_Framework.vcxproj -> Z:\CS4505GPA-HW-Quizs\HWs\Assignment-1\Quiz Framework - Fixed Pipeline\VC10\Quiz_Framework\Debug\Quiz_Framework.exe
-       Manifest:
-         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"Z:\CS4505GPA-HW-Quizs\HWs\Assignment-1\Quiz Framework - Fixed Pipeline\VC10\Quiz_Framework\Debug\Quiz_Framework.exe;#1" /manifest Debug\Quiz_Framework.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\Quiz_Framework.unsuccessfulbuild".
          Touching "Debug\Quiz_Framework.lastbuildstate".
@@ -47,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.89
+Time Elapsed 00:00:02.02
